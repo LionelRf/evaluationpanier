@@ -1,0 +1,11 @@
+<div class="fruit-item">
+    <img [src]="fruit.image" [alt]="fruit.nom">
+    <h3>{{ fruit.nom }}</h3>
+    <p>{{ fruit.prixHT }} € HT</p>
+    <div>
+      <button (click)="retirerDuPanier()">-</button>
+      {{ fruit.quantite }}
+      <button (click)="ajouterAuPanier()">+</button>
+    </div>
+  </div>
+  

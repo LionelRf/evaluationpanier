@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let fruit of fruits">
+            <div class="card">
+              <img [src]="fruit.image" class="card-img-top" alt="{{fruit.nom}}">
+              <div class="card-body">
+                <h5 class="card-title">{{fruit.nom}}</h5>
+                <p class="card-text">Prix HT: {{fruit.prixHT}} €</p>
+                <button class="btn btn-primary" (click)="ajouterAuPanier(fruit)">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="cart">
+          <h2>Panier</h2>
+          <div *ngFor="let item of panier" class="cart-item">
+            <span>{{item.nom}} x {{item.quantite}}</span>
+            <span>{{item.prixHT * item.quantite}} €</span>
+          </div>
+          <div class="mt-3">
+            <p><strong>Total HT:</strong> {{totalHT}} €</p>
+            <p><strong>Total TTC (20% TVA):</strong> {{totalTTC}} €</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
